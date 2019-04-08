@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>留言列表</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul{
+            list-style: none;
+        }
+        .container{
+            margin:80px auto;
+            width:1000px;
+            height:500px;
+        }
+        .showMessage{
+            margin-top:30px;
+            box-sizing: border-box;
+            width: 1000px;
+            height:500px;
+        }
+        .btn{
+            width:80px;
+            height: 30px;
+            display: block;
+            background:#333;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+        }
+        .showMessage li{
+            margin:10px 0px 10px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <a href="/post" class="btn">发表留言</a>
+        </div>
+        <div class="showMessage">
+            <ul><hr>
+                {{each messages}}
+                
+                <li>
+                    <span>{{$value.name}}说:</span>
+                    <span>{{$value.msg}}</span>
+                    <span style="float:right">{{$value.dataTime}}</span>
+                </li> <hr>
+                {{/each}}
+               
+               
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
